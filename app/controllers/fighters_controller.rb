@@ -1,7 +1,7 @@
 class FightersController < ApplicationController
-  before_action :set_fighter, only: [:show, :update, :destroy]
+  include Giphy
+before_action :set_fighter, only: [:show, :update, :destroy]
 
-include Giphy
 
   # GET /fighters
   # GET /fighters.json
