@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123045807) do
+ActiveRecord::Schema.define(version: 20161129001041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "barracks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "fighter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "barracks", ["fighter_id"], name: "index_barracks_on_fighter_id", using: :btree
+  add_index "barracks", ["user_id"], name: "index_barracks_on_user_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -29,7 +39,10 @@ ActiveRecord::Schema.define(version: 20161123045807) do
     t.string   "giphy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "fighters", ["user_id"], name: "index_fighters_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -42,5 +55,8 @@ ActiveRecord::Schema.define(version: 20161123045807) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "barracks", "fighters"
+  add_foreign_key "barracks", "users"
   add_foreign_key "examples", "users"
+  add_foreign_key "fighters", "users"
 end

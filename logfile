@@ -25,3 +25,47 @@ DETAIL:  There is 1 other session using the database.
 STATEMENT:  DROP DATABASE IF EXISTS "full-stack-project-rails-api_development"
 ERROR:  database "full-stack-project-rails-api_development" already exists
 STATEMENT:  CREATE DATABASE "full-stack-project-rails-api_development" ENCODING = 'unicode'
+LOG:  database system was shut down at 2016-11-26 13:25:41 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+ERROR:  syntax error at or near "user" at character 1
+STATEMENT:  user
+	SELECT * FROM users
+	;
+ERROR:  syntax error at or near "*" at character 15
+STATEMENT:  SELECT * FROM *
+	;
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  received SIGHUP, reloading configuration files
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-11-28 16:31:32 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received smart shutdown request
+LOG:  received SIGHUP, reloading configuration files
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-11-28 17:05:49 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  syntax error at or near "users" at character 1
+STATEMENT:  users
+	;
+ERROR:  syntax error at or near "b" at character 1
+STATEMENT:  b = Fighter.new(Giphy.random)
+	;
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-11-28 20:06:44 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

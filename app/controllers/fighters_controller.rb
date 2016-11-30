@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 class FightersController < ApplicationController
   include Giphy
-before_action :set_fighter, only: [:show, :update, :destroy]
-
+  before_action :set_fighter, only: [:show, :update, :destroy]
 
   # GET /fighters
   # GET /fighters.json
@@ -17,11 +17,16 @@ before_action :set_fighter, only: [:show, :update, :destroy]
     render json: @fighter
   end
 
+  # GET /fighter(random)
+  def random
+    render json: Giphy.random
+  end
+
   # POST /fighters
   # POST /fighters.json
   def create
     @fighter = Fighter.new(fighter_params)
-
+# Giphy by id as the fighter creator?
     if @fighter.save
       render json: @fighter, status: :created, location: @fighter
     else
@@ -51,11 +56,12 @@ before_action :set_fighter, only: [:show, :update, :destroy]
 
   private
 
-    def set_fighter
-      @fighter = Fighter.find(params[:id])
-    end
+  def set_fighter
+    @fighter = Fighter.find(params[:id])
+  end
 
-    def fighter_params
-      params.require(:fighter).permit(:giphy_id, :created_at, :updated_at)
-    end
+  def fighter_params
+    params.require(:fighter).permit(:giphy_id, :created_at, :updated_at)
+  end
+
 end
