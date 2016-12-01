@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129001041) do
+ActiveRecord::Schema.define(version: 20161201163020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(version: 20161129001041) do
     t.integer  "fighter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "u_val"
+    t.integer  "f_val"
+    t.boolean  "win?"
+    t.string   "opponent"
   end
 
   add_index "barracks", ["fighter_id"], name: "index_barracks_on_fighter_id", using: :btree
