@@ -26,7 +26,7 @@ class FightersController < ApplicationController
   # POST /fighters.json
   def create
     @fighter = Fighter.new(fighter_params)
-# Giphy by id as the fighter creator?
+    # Giphy by id as the fighter creator?
     if @fighter.save
       render json: @fighter, status: :created, location: @fighter
     else
