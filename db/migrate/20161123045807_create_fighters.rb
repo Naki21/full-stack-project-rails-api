@@ -1,7 +1,7 @@
 class CreateFighters < ActiveRecord::Migration
   def change
     create_table :fighters do |t|
-      t.string :giphy_id
+      t.string :image_url
 
       t.timestamps null: false
     end

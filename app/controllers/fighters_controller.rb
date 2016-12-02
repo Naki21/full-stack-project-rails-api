@@ -28,7 +28,7 @@ class FightersController < ApplicationController
     @fighter = Fighter.new(fighter_params)
     # Giphy by id as the fighter creator?
     if @fighter.save
-      render json: @fighter, status: :created, location: @fighter
+      render json: @fighter, status: :created
     else
       render json: @fighter.errors, status: :unprocessable_entity
     end
@@ -61,7 +61,6 @@ class FightersController < ApplicationController
   end
 
   def fighter_params
-    params.require(:fighter).permit(:giphy_id, :created_at, :updated_at)
+    params.require(:fighter).permit(:giphy_id, :image_url, :created_at, :updated_at)
   end
-
 end

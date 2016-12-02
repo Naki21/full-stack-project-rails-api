@@ -1,3 +1,3 @@
 class FighterSerializer < ActiveModel::Serializer
-  attributes :id, :giphy_id
+  attributes :id, :image_url
 end
