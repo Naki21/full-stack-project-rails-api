@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :battles, except: [:new, :edit]
   resources :barracks, except: [:new, :edit]
   # fighters routes
   resources :fighters, except: [:new, :edit]
