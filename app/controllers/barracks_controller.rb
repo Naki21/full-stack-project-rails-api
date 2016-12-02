@@ -21,7 +21,7 @@ class BarracksController < ApplicationController
     @barrack = Barrack.new(barrack_params)
 
     if @barrack.save
-      render json: @barrack, status: :created, location: @barrack
+      render json: @barrack, status: :created
     else
       render json: @barrack.errors, status: :unprocessable_entity
     end
@@ -54,6 +54,6 @@ class BarracksController < ApplicationController
     end
 
     def barrack_params
-      params.require(:barrack).permit(:user_id, :fighter_id)
+      params.require(:barrack).permit(:user_id, :giphy_id)
     end
 end
