@@ -1,4 +1,4 @@
-class BarracksController < ApplicationController
+class BarracksController < OpenReadController
   before_action :set_barrack, only: [:show, :update, :destroy]
 
   # GET /barracks
@@ -18,7 +18,7 @@ class BarracksController < ApplicationController
   # POST /barracks
   # POST /barracks.json
   def create
-    @barrack = Barrack.new(barrack_params)
+    @barrack = current_user.Barrack.new(barrack_params)
 
     if @barrack.save
       render json: @barrack, status: :created
@@ -50,7 +50,7 @@ class BarracksController < ApplicationController
   private
 
     def set_barrack
-      @barrack = Barrack.find(params[:id])
+      @barrack = current_user.Barrack.find(params[:id])
     end
 
     def barrack_params

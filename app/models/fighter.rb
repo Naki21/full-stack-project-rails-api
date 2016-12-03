@@ -1,4 +1,6 @@
 class Fighter < ActiveRecord::Base
-  has_many :users, through: :barracks
+  belongs_to :user
   has_many :barracks
+  validates :url, :user_id, presence: true
+
 end

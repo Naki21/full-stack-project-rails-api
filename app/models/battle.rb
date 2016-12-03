@@ -5,7 +5,7 @@ class Battle < ActiveRecord::Base
   belongs_to :barracks
   def initialize(battle_params)
     super
-    self.opponent = Giphy.random.id
+    self.opponent = Giphy.random.image_url
     self.u_val = rand(100)
     self.f_val = rand(100)
   end
