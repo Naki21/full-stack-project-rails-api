@@ -5,6 +5,7 @@ class Battle < ActiveRecord::Base
   validates :user_id, presence: true
   def initialize(battle_params)
     super
+    self.my_fighter = Fighter.find(fighter_id).url
     self.opponent = Giphy.random.image_url
     self.u_val = rand(100)
     self.f_val = rand(100)

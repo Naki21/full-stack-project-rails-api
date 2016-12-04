@@ -101,3 +101,7 @@ LOG:  autovacuum launcher shutting down
 LOG:  shutting down
 LOG:  received SIGHUP, reloading configuration files
 LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-04 01:09:03 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

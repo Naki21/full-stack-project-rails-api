@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class FightersController < OpenReadController
   include Giphy
-  before_action :set_fighter, only: [:show, :update, :destroy]
+  before_action :set_fighter, only: [:update, :destroy]
 
   # GET /fighters
   # GET /fighters.json
@@ -60,6 +60,6 @@ class FightersController < OpenReadController
   end
 
   def fighter_params
-    params.require(:fighter).permit(:url, :user, :created_at, :updated_at, :user_id)
+    params.require(:fighter).permit(:url, :user, :my_fighter, :created_at, :updated_at, :user_id)
   end
 end
