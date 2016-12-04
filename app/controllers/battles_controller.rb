@@ -1,4 +1,4 @@
-class BattlesController < ApplicationController
+class BattlesController < OpenReadController
   before_action :set_battle, only: [:show, :update, :destroy]
 
   # GET /battles
@@ -18,7 +18,7 @@ class BattlesController < ApplicationController
   # POST /battles
   # POST /battles.json
   def create
-    @battle = Battle.new(battle_params)
+    @battle = current_user.battles.build(battle_params)
 
     if @battle.save
       render json: @battle, status: :created
@@ -50,10 +50,10 @@ class BattlesController < ApplicationController
   private
 
     def set_battle
-      @battle = Battle.find(params[:id])
+      @battle = current_user.battles.find(params[:id])
     end
 
     def battle_params
-      params.require(:battle).permit(:f_val, :u_val, :barrack_id, :opponent, :win?)
+      params.require(:battle).permit(:f_val, :u_val, :opponent, :win?, :fighter_id)
     end
 end
