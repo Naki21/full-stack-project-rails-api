@@ -9,5 +9,10 @@ class Battle < ActiveRecord::Base
     self.opponent = Giphy.random.image_url
     self.u_val = rand(100)
     self.f_val = rand(100)
+    self.win = if u_val >= f_val
+                 true
+               else
+                 false
+                end
   end
 end
