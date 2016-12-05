@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-class FightersController < ApplicationController
+class FightersController < OpenReadController
   include Giphy
-  before_action :set_fighter, only: [:show, :update, :destroy]
+  before_action :set_fighter, only: [:update, :destroy]
 
   # GET /fighters
   # GET /fighters.json
@@ -25,10 +25,9 @@ class FightersController < ApplicationController
   # POST /fighters
   # POST /fighters.json
   def create
-    @fighter = Fighter.new(fighter_params)
-    # Giphy by id as the fighter creator?
+    @fighter = current_user.fighters.build(fighter_params)
     if @fighter.save
-      render json: @fighter, status: :created, location: @fighter
+      render json: @fighter, status: :created
     else
       render json: @fighter.errors, status: :unprocessable_entity
     end
@@ -57,11 +56,10 @@ class FightersController < ApplicationController
   private
 
   def set_fighter
-    @fighter = Fighter.find(params[:id])
+    @fighter = current_user.fighters.find(params[:id])
   end
 
   def fighter_params
-    params.require(:fighter).permit(:giphy_id, :created_at, :updated_at)
+    params.require(:fighter).permit(:url, :user, :my_fighter, :created_at, :updated_at, :user_id)
   end
-
 end

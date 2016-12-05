@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 include Giphy
 class Battle < ActiveRecord::Base
-  has_many :users, through: :barracks
-  belongs_to :barracks
+  belongs_to :user
+  validates :user_id, presence: true
   def initialize(battle_params)
     super
-    self.opponent = Giphy.random.id
-    self.u_val = rand(100)
-    self.f_val = rand(100)
+    self.my_fighter = Fighter.find(fighter_id).url
+    self.opponent = Giphy.random.image_url
+    self.u_val = 0
+    self.f_val = 0
+    self.win = nil
   end
 end
