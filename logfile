@@ -105,3 +105,37 @@ LOG:  database system was shut down at 2016-12-04 01:09:03 EST
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was interrupted; last known up at 2016-12-04 18:47:21 EST
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  invalid record length at 0/3827B30
+LOG:  redo is not required
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-04 19:44:10 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  database "full-stack-project-rails-api_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "full-stack-project-rails-api_development"
+ERROR:  database "full-stack-project-rails-api_development" already exists
+STATEMENT:  CREATE DATABASE "full-stack-project-rails-api_development" ENCODING = 'unicode'
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+FATAL:  terminating connection due to administrator command
+LOG:  shutting down
+LOG:  received SIGHUP, reloading configuration files
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-04 20:59:58 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  update or delete on table "fighters" violates foreign key constraint "fk_rails_da9dad332e" on table "battles"
+DETAIL:  Key (id)=(1) is still referenced from table "battles".
+STATEMENT:  DELETE FROM "fighters" WHERE "fighters"."id" = $1

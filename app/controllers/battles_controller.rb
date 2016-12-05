@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BattlesController < OpenReadController
   before_action :set_battle, only: [:show, :update, :destroy]
 
@@ -31,9 +32,16 @@ class BattlesController < OpenReadController
   # PATCH/PUT /battles/1.json
   def update
     @battle = Battle.find(params[:id])
+    @battle.u_val = rand(100)
+    @battle.f_val = rand(100)
+    @battle.win = if @battle.u_val >= @battle.f_val
+                  true
+                  else
+                    false
+    end
 
     if @battle.update(battle_params)
-      head :no_content
+      render json: @battle
     else
       render json: @battle.errors, status: :unprocessable_entity
     end
@@ -49,11 +57,11 @@ class BattlesController < OpenReadController
 
   private
 
-    def set_battle
-      @battle = current_user.battles.find(params[:id])
-    end
+  def set_battle
+    @battle = current_user.battles.find(params[:id])
+  end
 
-    def battle_params
-      params.require(:battle).permit(:f_val, :u_val, :opponent, :win?, :fighter_id)
-    end
+  def battle_params
+    params.require(:battle).permit(:f_val, :u_val, :my_fighter, :opponent, :win, :fighter_id, :user_id)
+  end
 end
