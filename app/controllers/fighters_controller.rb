@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-class FightersController < OpenReadController
+class FightersController < ProtectedController
   include Giphy
-  before_action :set_fighter, only: [:update, :destroy]
+  before_action :set_fighter, only: [:show, :update, :destroy]
 
   # GET /fighters
   # GET /fighters.json

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class BattlesController < OpenReadController
+class BattlesController < ProtectedController
   before_action :set_battle, only: [:show, :update, :destroy]
 
   # GET /battles
