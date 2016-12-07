@@ -6,7 +6,7 @@ class FightersController < ProtectedController
   # GET /fighters
   # GET /fighters.json
   def index
-    @fighters = Fighter.all
+    @fighters = current_user.fighters.all
 
     render json: @fighters
   end
