@@ -62,7 +62,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   Giphy::Configuration.configure do |config|
-    config.version = ENV['v1']
-    config.api_key = ENV['lDaub8qiXbMf6']
+    config.version = ENV['THE_API_VERSION']
+    config.api_key = ENV['DEFAULT_API_KEY']
   end
 end
