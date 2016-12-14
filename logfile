@@ -139,3 +139,58 @@ LOG:  autovacuum launcher started
 ERROR:  update or delete on table "fighters" violates foreign key constraint "fk_rails_da9dad332e" on table "battles"
 DETAIL:  Key (id)=(1) is still referenced from table "battles".
 STATEMENT:  DELETE FROM "fighters" WHERE "fighters"."id" = $1
+LOG:  database system was shut down at 2016-12-05 03:21:51 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 3290) running in data directory "/home/naki/.linuxbrew/var/postgres"?
+LOG:  database system was interrupted; last known up at 2016-12-09 14:44:55 EST
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  invalid record length at 0/3A9E4E8
+LOG:  redo is not required
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-09 15:24:19 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  received SIGHUP, reloading configuration files
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-12 10:49:18 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-12 15:14:06 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  received SIGHUP, reloading configuration files
+LOG:  database system is shut down
+LOG:  database system was shut down at 2016-12-13 17:59:56 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
